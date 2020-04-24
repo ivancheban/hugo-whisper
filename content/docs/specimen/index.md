@@ -137,7 +137,18 @@ Ad amet irure est magna id mollit Lorem in do duis enim. Excepteur velit nisi ma
 
 Et fugiat ad nisi amet magna labore do cillum fugiat occaecat cillum Lorem proident. In sint dolor ullamco ad do adipisicing amet id excepteur Lorem aliquip sit irure veniam laborum duis cillum. Aliqua occaecat minim cillum deserunt magna sunt laboris do do irure ea nostrud consequat ut voluptate ex.
 
-\`\`\`css<div class="notices {{ .Get 0 }}" {{ if len .Params | eq 2 }} id="{{ .Get 1 }}" {{ end }}><p>{{ .Inner | markdownify }}</p></div>\`\`\`
+\`\`\`go
+
+package main
+
+  
+import ( "fmt" "net/http")  
+func handler(w http.ResponseWriter, r *http.Request) { fmt.Fprintf(w, "Hi there, I love %s!", r.URL.Path\[1:\])}  
+func main() { http.HandleFunc("/", handler) http.ListenAndServe(":8080", nil)}\`\`\`
+
+\`\`\`css
+
+<div class="notices {{ .Get 0 }}" {{ if len .Params | eq 2 }} id="{{ .Get 1 }}" {{ end }}><p>{{ .Inner | markdownify }}</p></div>\`\`\`
 
 ```go
 package main

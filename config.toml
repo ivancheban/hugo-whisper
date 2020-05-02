@@ -3,6 +3,7 @@ languageCode = "en-us"
 title = "Hugo Ivan Docs"
 themesDir = "themes"
 theme = "hugo-whisper-theme"
+googleAnalytics = "UA-162550995-9"
 
 pygmentsCodeFences = true
 pygmentsCodefencesGuessSyntax = true
